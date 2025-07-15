@@ -7,10 +7,12 @@ import {
   Youtube 
 } from 'lucide-react'
 import { useLanguage } from '@/contexts/language-context'
+import { useTheme } from '@/components/ui/theme-provider'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
   const { t } = useLanguage()
+  const { theme } = useTheme()
   
   const socialLinks = [
     {
@@ -59,31 +61,30 @@ export function Footer() {
               href="https://foundersfoundation.de/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 group hover:scale-105 transition-all duration-300 mb-4"
+              className="inline-block group hover:scale-105 transition-all duration-300 mb-4"
             >
               <div className="bg-white/30 dark:bg-white/10 backdrop-blur-md rounded-xl 
-                            border border-white/30 dark:border-white/20 p-2
+                            border border-white/30 dark:border-white/20 p-3
                             group-hover:bg-white/40 dark:group-hover:bg-white/20
                             transition-all duration-300">
                 <img 
-                  src="/images/founders-foundation-logo.png"
+                  src={theme === 'dark' 
+                    ? "/images/founders-foundation-logo-dark.png" 
+                    : "/images/founders-foundation-logo.png"}
                   alt="Founders Foundation Logo"
-                  className="w-6 h-6 object-contain"
+                  className="h-8 w-auto object-contain"
+                  style={{ aspectRatio: '114/30' }}
                   onError={(e) => {
                     // Fallback to text if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     const fallback = document.createElement('div');
-                    fallback.className = 'w-6 h-6 text-black dark:text-white flex items-center justify-center font-bold text-sm';
+                    fallback.className = 'h-8 text-black dark:text-white flex items-center justify-center font-bold text-lg';
                     fallback.textContent = 'FF';
                     target.parentNode?.appendChild(fallback);
                   }}
                 />
               </div>
-              <h3 className="text-xl font-bold text-black dark:text-white
-                           group-hover:text-founders-red transition-colors duration-300">
-                Founders Foundation
-              </h3>
             </a>
             
             {/* Address - Directly Below Logo */}
