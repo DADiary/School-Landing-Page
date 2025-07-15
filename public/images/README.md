@@ -3,28 +3,53 @@
 ## Folder Structure
 
 - `public/images/` - Main images folder
-  - `founders-foundation-logo.png` - Main Founders Foundation logo (recommended: 200x200px or similar square format)
+  - `founders-foundation-logo.png` - Main Founders Foundation logo for light mode
+  - `founders-foundation-logo-dark.png` - Main Founders Foundation logo for dark mode (optional, falls back to light version)
   - `alumni/` - Alumni company logos folder
-    - `techflow-ai-logo.png` - TechFlow AI logo
-    - `greenenergy-solutions-logo.png` - GreenEnergy Solutions logo
-    - `healthtech-pro-logo.png` - HealthTech Pro logo
-    - `financeflow-logo.png` - FinanceFlow logo
-    - `edutech-innovation-logo.png` - EduTech Innovation logo
-    - `logichain-logo.png` - LogiChain logo
+    - Company logos with light/dark mode support:
+      - `logo_unchained-robotics_lightgrey.svg` - Light mode logo
+      - `logo_unchained-robotics_dark.svg` - Dark mode logo (optional)
+      - `Juna AI.png` - Light mode logo
+      - `Juna AI-dark.png` - Dark mode logo (optional)
+      - `lemon markets logo.png` - Light mode logo
+      - `lemon markets logo-dark.png` - Dark mode logo (optional)
+      - `saasmetrix.svg` - Light mode logo
+      - `saasmetrix-dark.svg` - Dark mode logo (optional)
+      - `VisionAI-Logo.svg` - Light mode logo
+      - `VisionAI-Logo-dark.svg` - Dark mode logo (optional)
+      - `acto logo.svg` - Light mode logo
+      - `acto logo-dark.svg` - Dark mode logo (optional)
 
 ## Recommended Image Specifications
 
 ### Founders Foundation Logo
 - **Format**: PNG with transparent background preferred
-- **Dimensions**: 200x200px (square format works best)
+- **Dimensions**: Wide format (aspect ratio 114:30) - approximately 228x60px recommended
 - **File size**: Under 50KB for optimal loading
+- **Dark Mode**: Provide separate dark mode version if needed, otherwise light version will be used
 
 ### Alumni Company Logos
 - **Format**: PNG with transparent background preferred
-- **Dimensions**: 100x100px (square format works best)
+- **Dimensions**: Flexible, but optimized for rectangular display (approximately 120x80px works well)
 - **File size**: Under 20KB each for optimal loading
-- **Style**: Clean, professional logos that work well on both light and dark backgrounds
+- **Dark Mode Support**: 
+  - Provide separate dark mode versions by adding `-dark` suffix to filename
+  - If no dark version is provided, the light version will be used in both modes
+  - Ensure logos have good contrast on both light and dark backgrounds
 
 ## Usage
 
-Once you place the actual image files in these folders, they will automatically be used by the application. The components are already configured to fall back to placeholder content if images are not found.
+The application now supports automatic light/dark mode logo switching:
+
+### Founders Foundation Logo
+- Place `founders-foundation-logo.png` for light mode
+- Optionally place `founders-foundation-logo-dark.png` for dark mode
+- If no dark version exists, the light version will be used in both modes
+
+### Alumni Company Logos  
+- Place the main logo file (e.g., `company-logo.svg`)
+- Optionally place a dark mode version with `-dark` suffix (e.g., `company-logo-dark.svg`)
+- The system will automatically choose the appropriate version based on the current theme
+- If no dark version exists, the light version will be used in both modes
+
+The components are configured to fall back to placeholder content if images are not found.
