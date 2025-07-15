@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { FounderTestimonialsSection } from '@/components/founder-testimonials-section'
@@ -11,8 +11,6 @@ interface AlumniCompany {
   school: string
   description: string
   website: string
-  founded: string
-  category: string
 }
 
 export function AlumniStoriesPage() {
@@ -22,63 +20,51 @@ export function AlumniStoriesPage() {
   const alumniCompanies: AlumniCompany[] = [
     {
       id: '1',
-      name: 'TechFlow AI',
-      logo: '/images/alumni/techflow-ai-logo.png',
-      school: 'Fall 2023',
-      description: 'Revolutionary AI-powered workflow automation platform that helps enterprises streamline their operations and increase productivity by 40%.',
-      website: 'https://techflow-ai.com',
-      founded: '2023',
-      category: 'AI & Automation'
+      name: 'Unchained Robotics',
+      logo: 'public/images/alumni/logo_unchained-robotics_lightgrey.svg',
+      school: 'Accelerator #6',
+      description: 'Robotics automation platform and marketplace',
+      website: 'https://unchainedrobotics.de/'
     },
     {
       id: '2',
-      name: 'GreenEnergy Solutions',
-      logo: '/images/alumni/greenenergy-solutions-logo.png',
-      school: 'Spring 2023',
-      description: 'Sustainable energy management system for smart buildings, reducing energy consumption by up to 35% through intelligent optimization.',
-      website: 'https://greenenergy-solutions.com',
-      founded: '2023',
-      category: 'CleanTech'
+      name: 'juna.ai',
+      logo: 'public/images/alumni/Juna AI.png',
+      school: 'Founders Lab',
+      description: 'AI agents for factory automation',
+      website: 'https://www.juna.ai/'
     },
     {
       id: '3',
-      name: 'HealthTech Pro',
-      logo: '/images/alumni/healthtech-pro-logo.png',
-      school: 'Fall 2022',
-      description: 'Digital health platform connecting patients with specialists through AI-powered diagnostics and telemedicine solutions.',
-      website: 'https://healthtech-pro.com',
-      founded: '2022',
-      category: 'HealthTech'
+      name: 'lemon.markets',
+      logo: 'public/images/alumni/lemon markets logo.png',
+      school: 'Founders Lab',
+      description: 'Infrastructure for provision of custom investment products',
+      website: 'https://www.lemon.markets/en-de'
     },
     {
       id: '4',
-      name: 'FinanceFlow',
-      logo: '/images/alumni/financeflow-logo.png',
+      name: 'saasmetrix',
+      logo: 'public/images/alumni/saasmetrix.svg',
       school: 'Spring 2022',
-      description: 'Next-generation fintech platform providing seamless payment solutions and financial analytics for small and medium businesses.',
-      website: 'https://financeflow.com',
-      founded: '2022',
-      category: 'FinTech'
+      description: 'SaaS license spend optimization platform',
+      website: 'https://www.saasmetrix.io/de/'
     },
     {
       id: '5',
-      name: 'EduTech Innovation',
-      logo: '/images/alumni/edutech-innovation-logo.png',
+      name: 'VisionAI',
+      logo: 'public/images/alumni/VisionAI-Logo.svg',
       school: 'Fall 2021',
-      description: 'Personalized learning platform using AI to adapt educational content to individual student needs and learning styles.',
-      website: 'https://edutech-innovation.com',
-      founded: '2021',
-      category: 'EdTech'
+      description: 'Agentic commerce platform',
+      website: 'https://www.visionai.co/'
     },
     {
       id: '6',
-      name: 'LogiChain',
-      logo: '/images/alumni/logichain-logo.png',
+      name: 'acto',
+      logo: 'public/images/alumni/acto logo.svg',
       school: 'Spring 2021',
-      description: 'Supply chain optimization platform leveraging blockchain and IoT to provide real-time tracking and transparency.',
-      website: 'https://logichain.com',
-      founded: '2021',
-      category: 'Logistics'
+      description: 'AI sales desicion intelligence',
+      website: 'https://www.heyacto.com/'
     }
   ]
 
