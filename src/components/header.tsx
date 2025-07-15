@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import AboutPopover from './about-popover'
 import { ThemeToggle } from './theme-toggle'
 import { LanguageToggle } from './language-toggle'
+import { useTheme } from '@/components/ui/theme-provider'
 import { useLanguage } from '@/contexts/language-context'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileCollapsed, setIsMobileCollapsed] = useState(false)
   const [showApplyButtonInHeader, setShowApplyButtonInHeader] = useState(false)
+  const { theme } = useTheme()
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -55,7 +57,9 @@ export function Header() {
                                 ? 'p-2' 
                                 : 'p-2 sm:p-3'}`}>
                 <img 
-                  src="/images/founders-foundation-logo.png"
+                  src={theme === 'dark' 
+                    ? "/images/founders-foundation-logo-dark.png" 
+                    : "/images/founders-foundation-logo.png"}
                   alt="Founders Foundation Logo"
                   className={`transition-all duration-500 object-contain
                              ${isMobileCollapsed && window.innerWidth < 768 

@@ -2,18 +2,21 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { FounderTestimonialsSection } from '@/components/founder-testimonials-section'
+import { useTheme } from '@/components/ui/theme-provider'
 import { useLanguage } from '@/contexts/language-context'
 
 interface AlumniCompany {
   id: string
   name: string
-  logo: string
+  logoLight: string
+  logoDark?: string
   school: string
   description: string
   website: string
 }
 
 export function AlumniStoriesPage() {
+  const { theme } = useTheme()
   const { t } = useLanguage()
   
   // Sample alumni data - replace with real data
@@ -21,7 +24,8 @@ export function AlumniStoriesPage() {
     {
       id: '1',
       name: 'Unchained Robotics',
-      logo: 'public/images/alumni/logo_unchained-robotics_lightgrey.svg',
+      logoLight: '/images/alumni/logo_unchained-robotics_lightgrey.svg',
+      logoDark: '/images/alumni/logo_unchained-robotics_dark.svg',
       school: 'Accelerator #6',
       description: 'Robotics automation platform and marketplace',
       website: 'https://unchainedrobotics.de/'
@@ -29,7 +33,8 @@ export function AlumniStoriesPage() {
     {
       id: '2',
       name: 'juna.ai',
-      logo: 'public/images/alumni/Juna AI.png',
+      logoLight: '/images/alumni/Juna AI.png',
+      logoDark: '/images/alumni/Juna AI-dark.png',
       school: 'Founders Lab',
       description: 'AI agents for factory automation',
       website: 'https://www.juna.ai/'
@@ -37,7 +42,8 @@ export function AlumniStoriesPage() {
     {
       id: '3',
       name: 'lemon.markets',
-      logo: 'public/images/alumni/lemon markets logo.png',
+      logoLight: '/images/alumni/lemon markets logo.png',
+      logoDark: '/images/alumni/lemon markets logo-dark.png',
       school: 'Founders Lab',
       description: 'Infrastructure for provision of custom investment products',
       website: 'https://www.lemon.markets/en-de'
@@ -45,7 +51,8 @@ export function AlumniStoriesPage() {
     {
       id: '4',
       name: 'saasmetrix',
-      logo: 'public/images/alumni/saasmetrix.svg',
+      logoLight: '/images/alumni/saasmetrix.svg',
+      logoDark: '/images/alumni/saasmetrix-dark.svg',
       school: 'Spring 2022',
       description: 'SaaS license spend optimization platform',
       website: 'https://www.saasmetrix.io/de/'
@@ -53,7 +60,8 @@ export function AlumniStoriesPage() {
     {
       id: '5',
       name: 'VisionAI',
-      logo: 'public/images/alumni/VisionAI-Logo.svg',
+      logoLight: '/images/alumni/VisionAI-Logo.svg',
+      logoDark: '/images/alumni/VisionAI-Logo-dark.svg',
       school: 'Fall 2021',
       description: 'Agentic commerce platform',
       website: 'https://www.visionai.co/'
@@ -61,7 +69,8 @@ export function AlumniStoriesPage() {
     {
       id: '6',
       name: 'acto',
-      logo: 'public/images/alumni/acto logo.svg',
+      logoLight: '/images/alumni/acto logo.svg',
+      logoDark: '/images/alumni/acto logo-dark.svg',
       school: 'Spring 2021',
       description: 'AI sales desicion intelligence',
       website: 'https://www.heyacto.com/'
@@ -142,7 +151,9 @@ export function AlumniStoriesPage() {
                                   group-hover:bg-white/50 dark:group-hover:bg-white/25
                                   shadow-md group-hover:shadow-lg">
                       <img 
-                        src={company.logo}
+                        src={theme === 'dark' && company.logoDark 
+                          ? company.logoDark 
+                          : company.logoLight}
                         alt={`${company.name} logo`}
                         className="w-16 h-12 sm:w-20 sm:h-16 md:w-24 md:h-20 object-contain"
                         onError={(e) => {
