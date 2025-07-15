@@ -52,33 +52,27 @@ export function Header() {
                               group-hover:bg-white/40 dark:group-hover:bg-white/20 
                               group-hover:shadow-lg transition-all duration-300
                               ${isMobileCollapsed && window.innerWidth < 768 
-                                ? 'p-1' 
-                                : 'p-1.5 sm:p-2'}`}>
+                                ? 'p-2' 
+                                : 'p-2 sm:p-3'}`}>
                 <img 
                   src="/images/founders-foundation-logo.png"
                   alt="Founders Foundation Logo"
                   className={`transition-all duration-500 object-contain
                              ${isMobileCollapsed && window.innerWidth < 768 
-                               ? 'w-4 h-4' 
-                               : 'w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6'}`}
+                               ? 'h-6 w-auto' 
+                               : 'h-8 w-auto sm:h-10 lg:h-12'}`}
+                  style={{ aspectRatio: '114/30' }}
                   onError={(e) => {
                     // Fallback to text if image fails to load
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     const fallback = document.createElement('div');
-                    fallback.className = `text-black dark:text-white transition-all duration-500 flex items-center justify-center font-bold text-xs ${isMobileCollapsed && window.innerWidth < 768 ? 'text-xs' : 'text-xs sm:text-sm lg:text-base'}`;
+                    fallback.className = `text-black dark:text-white transition-all duration-500 flex items-center justify-center font-bold ${isMobileCollapsed && window.innerWidth < 768 ? 'text-sm' : 'text-base sm:text-lg lg:text-xl'}`;
                     fallback.textContent = 'FF';
                     target.parentNode?.appendChild(fallback);
                   }}
                 />
               </div>
-              <span className={`font-semibold text-black dark:text-white 
-                               group-hover:text-founders-red transition-all duration-300
-                               ${isMobileCollapsed && window.innerWidth < 768 
-                                 ? 'text-sm' 
-                                 : 'text-sm sm:text-base lg:text-lg'}`}>
-                Founders Foundation
-              </span>
             </a>
             
             {/* About popover - Hide on mobile when collapsed */}
