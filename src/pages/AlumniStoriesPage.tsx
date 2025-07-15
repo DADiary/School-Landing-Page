@@ -134,7 +134,7 @@ export function AlumniStoriesPage() {
                   
                   {/* Company Logo - Static Position */}
                   <div className="mb-3 flex justify-center">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg
+                    <div className="w-20 h-16 sm:w-24 sm:h-20 md:w-28 md:h-24 rounded-lg
                                   flex items-center justify-center text-2xl sm:text-3xl
                                   group-hover:scale-110 transition-all duration-300
                                   bg-white/30 dark:bg-white/15 backdrop-blur-md
@@ -144,13 +144,13 @@ export function AlumniStoriesPage() {
                       <img 
                         src={company.logo}
                         alt={`${company.name} logo`}
-                        className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                        className="w-16 h-12 sm:w-20 sm:h-16 md:w-24 md:h-20 object-contain"
                         onError={(e) => {
                           // Fallback to company initials if image fails to load
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
                           const fallback = document.createElement('div');
-                          fallback.className = 'text-lg sm:text-xl font-bold text-black dark:text-white';
+                          fallback.className = 'text-xl sm:text-2xl md:text-3xl font-bold text-black dark:text-white';
                           fallback.textContent = company.name.split(' ').map(word => word[0]).join('').substring(0, 2);
                           target.parentNode?.appendChild(fallback);
                         }}
@@ -159,7 +159,7 @@ export function AlumniStoriesPage() {
                   </div>
                   
                   {/* Company Name */}
-                  <h3 className="text-sm sm:text-base font-bold text-black dark:text-white mb-2 text-center
+                  <h3 className="text-xs sm:text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-2 text-center
                                group-hover:text-founders-red dark:group-hover:text-white
                                transition-colors duration-300">
                     {company.name}
