@@ -297,7 +297,7 @@ export function AlumniStoriesPage() {
               key={company.id}
               onClick={() => handleCompanyClick(company.website)}
               className={`group relative flex flex-col
-                bg-white/20 dark:bg-white/10 backdrop-blur-md
+                bg-white/20 dark:bg-neutral-200/30 backdrop-blur-md
                 border border-white/20 dark:border-white/10
                 hover:bg-white/30 dark:hover:bg-white/15 
                 hover:border-white/40 dark:hover:border-white/25
