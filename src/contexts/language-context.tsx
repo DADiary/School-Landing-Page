@@ -37,19 +37,19 @@ const translations = {
     
     // AI Verticals
     'ai.industrial.title': 'Industrial AI',
-    'ai.industrial.author': 'Dominik Gross',
+    'ai.industrial.author': 'By Dominik Gross',
     'ai.industrial.description1': 'Industrial AI represents the next frontier in manufacturing optimization. We\'re looking for startups leveraging AI to revolutionize industrial processes.',
     'ai.industrial.description2': 'Key areas include computer vision for quality inspection, predictive analytics for equipment maintenance, and intelligent automation systems.',
     'ai.industrial.watchDemo': 'Watch demo',
     
     'ai.vertical.title': 'Vertical AI',
-    'ai.vertical.author': 'Simon Scherer',
+    'ai.vertical.author': 'By Simon Scherer',
     'ai.vertical.description1': 'Vertical AI focuses on domain-specific solutions that deeply understand and transform specific industries with built-in expertise.',
     'ai.vertical.description2': 'Priority areas include AI-powered diagnostic tools, intelligent compliance systems, automated legal research, and precision agriculture solutions.',
     'ai.vertical.watchDemo': 'Watch demo',
     
     'ai.voice.title': 'Voice AI',
-    'ai.voice.author': 'Stephan Jacquemot',
+    'ai.voice.author': 'By Stephan Jacquemot',
     'ai.voice.description1': 'Voice AI represents the convergence of natural language processing and conversational intelligence for truly intuitive voice interfaces.',
     'ai.voice.description2': 'Key opportunities include voice-first customer service, specialized voice assistants, real-time translation services, and conversational AI for enterprise applications.',
     'ai.voice.watchDemo': 'Watch demo',
@@ -159,19 +159,19 @@ const translations = {
     
     // AI Verticals
     'ai.industrial.title': 'Industrial AI',
-    'ai.industrial.author': 'Dominik Gross',
+    'ai.industrial.author': 'By Dominik Gross',
     'ai.industrial.description1': 'Industrial AI repräsentiert die nächste Grenze in der Fertigungsoptimierung. Wir suchen Startups, die KI nutzen, um industrielle Prozesse zu revolutionieren.',
     'ai.industrial.description2': 'Schlüsselbereiche umfassen Computer Vision für Qualitätsprüfung, prädiktive Analytik für Gerätewartung und intelligente Automatisierungssysteme.',
     'ai.industrial.watchDemo': 'Demo ansehen',
     
     'ai.vertical.title': 'Vertical AI',
-    'ai.vertical.author': 'Simon Scherer',
+    'ai.vertical.author': 'By Simon Scherer',
     'ai.vertical.description1': 'Vertical AI konzentriert sich auf domänenspezifische Lösungen, die spezifische Branchen mit eingebauter Expertise tiefgreifend verstehen und transformieren.',
     'ai.vertical.description2': 'Prioritätsbereiche umfassen KI-gestützte Diagnosewerkzeuge, intelligente Compliance-Systeme, automatisierte Rechtsrecherche und Präzisionslandwirtschaftslösungen.',
     'ai.vertical.watchDemo': 'Demo ansehen',
     
     'ai.voice.title': 'Voice AI',
-    'ai.voice.author': 'Stephan Jacquemot',
+    'ai.voice.author': 'By Stephan Jacquemot',
     'ai.voice.description1': 'Voice AI repräsentiert die Konvergenz von natürlicher Sprachverarbeitung und konversationeller Intelligenz für wirklich intuitive Sprachschnittstellen.',
     'ai.voice.description2': 'Wichtige Möglichkeiten umfassen sprachzentrierten Kundenservice, spezialisierte Sprachassistenten, Echtzeit-Übersetzungsdienste und konversationelle KI für Unternehmensanwendungen.',
     'ai.voice.watchDemo': 'Demo ansehen',

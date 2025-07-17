@@ -1,13 +1,25 @@
-import { Building2, Mail, MapPin, Calendar } from 'lucide-react'
+import { Mail, MapPin, Calendar } from 'lucide-react'
 import { 
-  Facebook, 
-  Twitter, 
   Instagram, 
   Linkedin, 
   Youtube 
 } from 'lucide-react'
 import { useLanguage } from '@/contexts/language-context'
 import { useTheme } from '@/components/ui/theme-provider'
+
+
+
+// X (formerly Twitter) Icon as image
+function XIcon(props: React.HTMLAttributes<HTMLImageElement>) {
+  return (
+    <img
+      src="/images/x-logo.svg" // Place the provided image at public/images/x-logo.png
+      alt="X logo"
+      className="w-5 h-5 object-contain"
+      {...props}
+    />
+  )
+}
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -18,31 +30,25 @@ export function Footer() {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://linkedin.com/company/founders-foundation',
+      url: 'https://www.linkedin.com/company/founders-foundation-ggmbh/',
       color: 'hover:text-blue-600 dark:hover:text-blue-400'
     },
     {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/foundersfound',
-      color: 'hover:text-blue-500 dark:hover:text-blue-400'
+      name: 'X',
+      icon: XIcon,
+      url: 'https://x.com/HelloFounders',
+      color: 'hover:text-black dark:hover:text-white'
     },
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/founders.foundation',
+      url: 'https://www.instagram.com/foundersfoundation/',
       color: 'hover:text-pink-600 dark:hover:text-pink-400'
-    },
-    {
-      name: 'Facebook',
-      icon: Facebook,
-      url: 'https://facebook.com/foundersfoundation',
-      color: 'hover:text-blue-700 dark:hover:text-blue-500'
     },
     {
       name: 'YouTube',
       icon: Youtube,
-      url: 'https://youtube.com/@foundersfoundation',
+      url: 'https://www.youtube.com/channel/UCmBSRRAK4ogJhaJED3zVCKg',
       color: 'hover:text-red-600 dark:hover:text-red-400'
     }
   ]
@@ -53,6 +59,7 @@ export function Footer() {
         
         {/* Main Footer Content - Flexbox Layout */}
         <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12 mb-12">
+        {/* End of Selection */}
           
           {/* Left Side - Logo and Address */}
           <div className="flex-shrink-0">
@@ -69,7 +76,7 @@ export function Footer() {
                             transition-all duration-300">
                 <img 
                   src={theme === 'dark' 
-                    ? "/images/founders-foundation-logo-dark.png" 
+                    ? "/images/foundersfoundation_logo_w.png" 
                     : "/images/founders-foundation-logo.png"}
                   alt="Founders Foundation Logo"
                   className="h-8 w-auto object-contain"

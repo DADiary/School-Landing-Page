@@ -145,16 +145,21 @@ export function ProgramDetailsPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group relative px-8 py-3 text-base font-semibold text-white
+              <a
+                href="https://foundersfoundation.de/startup-school-bewerbung/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-8 py-3 text-base font-semibold text-white
                                bg-founders-red hover:bg-founders-red/90
                                backdrop-blur-xl border border-founders-red/30
                                rounded-full shadow-lg
                                hover:shadow-xl hover:scale-105
                                transition-all duration-300 ease-out
-                               active:scale-95 w-full sm:w-auto">
+                               active:scale-95 w-full sm:w-auto text-center"
+              >
                 <span className="relative z-10">{t('header.apply')}</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </button>
+              </a>
               
               <button className="group relative px-8 py-3 text-base font-medium text-black dark:text-white
                                bg-white/40 dark:bg-white/10 backdrop-blur-xl 
@@ -167,13 +172,20 @@ export function ProgramDetailsPage() {
                                active:scale-95 w-full sm:w-auto
                                flex items-center gap-2 justify-center"
               >
-                <Download className="w-4 h-4" />
-                <span className="relative z-10">{t('program.downloadProgram')}</span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neutral-100/20 to-neutral-200/20 dark:from-neutral-800/20 dark:to-neutral-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <a
+                  href="https://foundersfoundation.de/wp-content/uploads/2025/04/Startup-School-19-Programmuebersicht-Stand-27.03.25.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  <span className="relative z-10">{t('program.downloadProgram')}</span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neutral-100/20 to-neutral-200/20 dark:from-neutral-800/20 dark:to-neutral-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </button>
               
               <Link 
-                to="/"
+                to="https://foundersfoundation.de/gruenden-in-owl/startup-school/"
                 className="group relative px-8 py-3 text-base font-medium text-black dark:text-white
                            bg-white/40 dark:bg-white/10 backdrop-blur-xl 
                            border border-white/50 dark:border-white/20

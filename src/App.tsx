@@ -7,11 +7,18 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import { LanguageProvider } from '@/contexts/language-context'
 import { Footer } from '@/components/footer'
 import './App.css'
+// Stagewise Toolbar integration
+import { StagewiseToolbar } from '@stagewise/toolbar-react'
+import ReactPlugin from '@stagewise-plugins/react'
 
 function App() {
   return (
     <LanguageProvider>
       <ThemeProvider defaultTheme="light" storageKey="startup-school-theme">
+        {/* Stagewise Toolbar: only in development mode */}
+        {import.meta.env.DEV && (
+          <StagewiseToolbar config={{ plugins: [ReactPlugin] }} />
+        )}
         <div className="min-h-screen">
           <Header />
           <Routes>

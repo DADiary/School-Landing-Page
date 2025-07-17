@@ -24,14 +24,7 @@ body {
 
 /* Light mode background */
 body:not(.dark) {
-  background: radial-gradient(ellipse 150% 100% at center 60%, 
-    rgba(184, 29, 54, 0.25) 0%, 
-    rgba(184, 29, 54, 0.20) 25%, 
-    rgba(184, 29, 54, 0.15) 40%,
-    rgba(184, 29, 54, 0.08) 55%,
-    rgba(245, 245, 245, 1) 70%,
-    rgba(240, 240, 240, 1) 100%
-  );
+  background: #f5f5f5;
 }
 
 /* Dark mode background */

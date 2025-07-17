@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/language-context'
 
 export function MainSection() {
   const [showLearnMore, setShowLearnMore] = useState(false)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   return (
     <main className="w-full px-3 sm:px-4 md:px-6 lg:px-8 pt-8 pb-12">
@@ -34,16 +34,21 @@ export function MainSection() {
             {/* Small screens (mobile + tablet): Side by side buttons */}
             <div className="flex flex-row lg:hidden gap-3 w-full max-w-md justify-center">
               {/* Apply to Fall 2025 - Mobile */}
-              <button className="group relative px-4 py-2.5 text-sm font-semibold text-white
+              <a
+                href="https://foundersfoundation.de/startup-school-bewerbung/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-4 py-2.5 text-sm font-semibold text-white
                                bg-founders-red hover:bg-founders-red/90
                                backdrop-blur-xl border border-founders-red/30
                                rounded-full shadow-lg
                                hover:shadow-xl hover:scale-105
                                transition-all duration-300 ease-out
-                               active:scale-95 flex-1">
+                               active:scale-95 flex-1 text-center"
+              >
                 <span className="relative z-10">{t('header.apply')}</span>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </button>
+              </a>
 
               {/* Learn More - Small screens */}
               <button 
@@ -77,16 +82,21 @@ export function MainSection() {
             <div className="hidden lg:flex flex-col items-center space-y-3 w-full">
               {/* Apply to Fall 2025 - Primary CTA */}
               <div className="flex justify-center w-full">
-                <button className="group relative px-6 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-semibold text-white
+                <a
+                  href="https://foundersfoundation.de/startup-school-bewerbung/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative px-6 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-semibold text-white
                                  bg-founders-red hover:bg-founders-red/90
                                  backdrop-blur-xl border border-founders-red/30
                                  rounded-full shadow-lg
                                  hover:shadow-xl hover:scale-105
                                  transition-all duration-300 ease-out
-                                 active:scale-95 w-full lg:w-auto max-w-xs">
+                                 active:scale-95 w-full lg:w-auto max-w-xs text-center"
+                >
                   <span className="relative z-10">{t('header.apply')}</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500/20 to-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
+                </a>
               </div>
 
               {/* Learn More Button */}
@@ -184,7 +194,7 @@ export function MainSection() {
         </div>
 
         {/* Request for Startups Section - Tighter Spacing */}
-        <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-full mx-auto bg-white/30 dark:bg-white/5 backdrop-blur-xl 
+        <div className="w-full max-w-3xl mx-auto bg-white/30 dark:bg-white/5 backdrop-blur-xl 
                         border border-white/40 dark:border-white/15 rounded-2xl md:rounded-3xl
                         p-3 sm:p-4 md:p-5 lg:p-6 shadow-2xl
                         hover:bg-white/40 dark:hover:bg-white/10 
@@ -215,6 +225,26 @@ export function MainSection() {
           {/* AI Verticals Section */}
           <div className="max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
             <AIVerticalsSections />
+          </div>
+        </div>
+        {/* Inspiration Video Section */}
+        <div className="w-full flex flex-col items-center justify-center mt-12">
+          <div className="bg-white/30 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/15 rounded-2xl shadow-2xl p-6 sm:p-8 max-w-3xl w-full mx-auto flex flex-col items-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-founders-red dark:text-white mb-6">
+              {language === 'de' ? 'Bock durchzustarten? Lass dich inspirieren!' : 'Ready to go? Get inspired!'}
+            </h2>
+            <div className="w-full aspect-video max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/ADmoaMOIqtw"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -350,10 +380,10 @@ function IndustrialAIContent() {
   const { t } = useLanguage()
   
   return (
-    <div className="animate-in fade-in-0 duration-500">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-start">
+    <div className="animate-in fade-in-0 duration-500 max-w-2xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 xl:gap-8 items-center md:items-start">
         {/* Text Content */}
-        <div className="flex-1 md:flex-[3]">
+        <div className="w-full md:max-w-md">
           <div className="text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-2 md:space-y-3 text-xs sm:text-sm md:text-base text-left">
             <p>
               {t('ai.industrial.description1')}
@@ -363,35 +393,19 @@ function IndustrialAIContent() {
             </p>
           </div>
         </div>
-
         {/* Video Section */}
-        <div className="flex-shrink-0 md:flex-[2]">
-          <div className="aspect-[9/16] bg-neutral-200 dark:bg-neutral-800 rounded-xl 
-                          flex items-center justify-center relative overflow-hidden
-                          w-32 sm:w-40 md:w-full md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto
-                          hover:bg-neutral-300 dark:hover:bg-neutral-700
-                          transition-colors duration-300 cursor-pointer group">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-2 md:space-y-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-founders-red rounded-full flex items-center justify-center
-                              group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs sm:text-sm md:text-base lg:text-lg">
-                    {t('ai.industrial.title')}
-                  </p>
-                  <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-                    {t('ai.industrial.watchDemo')}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute inset-0 bg-founders-red/10 opacity-0 group-hover:opacity-100 
-                            transition-opacity duration-300" />
+        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -403,10 +417,10 @@ function VerticalAIContent() {
   const { t } = useLanguage()
   
   return (
-    <div className="animate-in fade-in-0 duration-500">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-start">
+    <div className="animate-in fade-in-0 duration-500 max-w-2xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 xl:gap-8 items-center md:items-start">
         {/* Text Content */}
-        <div className="flex-1 md:flex-[3]">
+        <div className="w-full md:max-w-md">
           <div className="text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-2 md:space-y-3 text-xs sm:text-sm md:text-base text-left">
             <p>
               {t('ai.vertical.description1')}
@@ -416,35 +430,19 @@ function VerticalAIContent() {
             </p>
           </div>
         </div>
-
         {/* Video Section */}
-        <div className="flex-shrink-0 md:flex-[2]">
-          <div className="aspect-[9/16] bg-neutral-200 dark:bg-neutral-800 rounded-xl 
-                          flex items-center justify-center relative overflow-hidden
-                          w-32 sm:w-40 md:w-full md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto
-                          hover:bg-neutral-300 dark:hover:bg-neutral-700
-                          transition-colors duration-300 cursor-pointer group">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-2 md:space-y-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-founders-red rounded-full flex items-center justify-center
-                              group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs sm:text-sm md:text-base lg:text-lg">
-                    {t('ai.vertical.title')}
-                  </p>
-                  <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-                    {t('ai.vertical.watchDemo')}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute inset-0 bg-founders-red/10 opacity-0 group-hover:opacity-100 
-                            transition-opacity duration-300" />
+        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -456,10 +454,10 @@ function VoiceAIContent() {
   const { t } = useLanguage()
   
   return (
-    <div className="animate-in fade-in-0 duration-500">
-      <div className="flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-start">
+    <div className="animate-in fade-in-0 duration-500 max-w-2xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 xl:gap-8 items-center md:items-start">
         {/* Text Content */}
-        <div className="flex-1 md:flex-[3]">
+        <div className="w-full md:max-w-md">
           <div className="text-neutral-700 dark:text-neutral-300 leading-relaxed space-y-2 md:space-y-3 text-xs sm:text-sm md:text-base text-left">
             <p>
               {t('ai.voice.description1')}
@@ -469,35 +467,19 @@ function VoiceAIContent() {
             </p>
           </div>
         </div>
-
         {/* Video Section */}
-        <div className="flex-shrink-0 md:flex-[2]">
-          <div className="aspect-[9/16] bg-neutral-200 dark:bg-neutral-800 rounded-xl 
-                          flex items-center justify-center relative overflow-hidden
-                          w-32 sm:w-40 md:w-full md:max-w-xs lg:max-w-sm xl:max-w-md mx-auto
-                          hover:bg-neutral-300 dark:hover:bg-neutral-700
-                          transition-colors duration-300 cursor-pointer group">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-2 md:space-y-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-founders-red rounded-full flex items-center justify-center
-                              group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-neutral-600 dark:text-neutral-400 font-medium text-xs sm:text-sm md:text-base lg:text-lg">
-                    {t('ai.voice.title')}
-                  </p>
-                  <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-500">
-                    {t('ai.voice.watchDemo')}
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="absolute inset-0 bg-founders-red/10 opacity-0 group-hover:opacity-100 
-                            transition-opacity duration-300" />
+        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
           </div>
         </div>
       </div>

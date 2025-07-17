@@ -16,63 +16,64 @@ interface FounderTestimonial {
 export function FounderTestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [direction, setDirection] = useState<'left' | 'right'>('right')
   const { t } = useLanguage()
 
   // Sample testimonial data with Pexels images
   const testimonials: FounderTestimonial[] = [
     {
       id: '1',
-      imageUrl: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'Sarah Chen',
-      title: 'CEO & Co-Founder',
-      company: 'TechFlow AI',
-      quote: 'Startup School gave me the framework and confidence to turn my AI idea into a thriving business. The mentorship was invaluable, and the network I built continues to support my journey.',
+      imageUrl: '/images/founders/Marcel Image.jpg',
+      name: 'Marcel Banmann',
+      title: 'Co-Founder & CEO',
+      company: 'saasmetrix',
+      quote: 'Wenn Du Teil eines lebendigen Startup-Netzwerks werden willst, auf der Suche nach Startupwissen und Unterstützung für Deine Gründerreise bist, ist die Founders Foundation der perfekte Ort dafür.',
       batch: 'Fall 2023'
     },
     {
       id: '2',
-      imageUrl: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'Marcus Weber',
-      title: 'Founder',
-      company: 'GreenEnergy Solutions',
-      quote: 'The program taught me how to validate my market assumptions and build a sustainable business model. Within 6 months of graduating, we secured our first major enterprise client.',
-      batch: 'Spring 2023'
+      imageUrl: '/images/founders/Johannes Image.jpg',
+      name: 'Johannes Mailänder',
+      title: 'Co-Founder & CMO',
+      company: 'Lichtwart',
+      quote: 'Je nachdem, ob Du noch am ganz am Anfang stehst oder schon ein starkes Team an deiner Seite hast, hier findest Du das passende Programm für Dich mit Startupswissen und einem starken Netzwerk, das Dir Rückenwind gibt.',
+      batch: 'Accelerator #11'
     },
     {
       id: '3',
-      imageUrl: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'Elena Rodriguez',
-      title: 'CEO',
-      company: 'HealthTech Pro',
-      quote: 'What sets Startup School apart is the focus on real-world application. Every week, we were implementing what we learned, which accelerated our product development significantly.',
-      batch: 'Fall 2022'
+      imageUrl: '/images/founders/Alexander Wunder Image.jpg',
+      name: 'Alexander Wunder',
+      title: 'Co-Founder & COO',
+      company: 'Synctive',
+      quote: 'Mit einem kleinen Gründerteam unserer B2B-Geschäftsidee sind wir in das Founders Lab eingezogen. Dort haben wir mit Experten aus der Industrie ein valides Geschäftsmodell entwickelt, das ein echtes Problem am Markt löst.',
+      batch: 'Founders Lab'
     },
     {
       id: '4',
-      imageUrl: 'https://images.pexels.com/photos/2182975/pexels-photo-2182975.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'David Kim',
-      title: 'Co-Founder & CTO',
-      company: 'FinanceFlow',
-      quote: 'The technical mentorship helped us avoid common pitfalls in fintech. Our platform launched 3 months ahead of schedule thanks to the guidance we received.',
-      batch: 'Spring 2022'
+      imageUrl: '/images/founders/Melvin Image.jpg',
+      name: 'Melvin Schwarz',
+      title: 'Co-Founder & CEO',
+      company: 'VisionAI',
+      quote: 'Der Founders Accelerator war für uns der ideale Ort, um einen schnellen Markteintritt zu schaffen und auch der Zugang zu unseren ersten Angelinvestoren hat uns geholfen, extrem viele Fehler zu vermeiden.',
+      batch: 'Accelerator #10'
     },
     {
       id: '5',
-      imageUrl: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'Lisa Thompson',
-      title: 'Founder & CEO',
-      company: 'EduTech Innovation',
-      quote: 'The program connected me with investors who understood our vision. We raised our seed round just 2 months after Demo Day, and our platform now serves over 10,000 students.',
+      imageUrl: '/images/founders/Jon Maycock Image.jpg',
+      name: 'Jonathan Maycock',
+      title: 'Co-Founder & CEO',
+      company: 'margin',
+      quote: 'We are part of a vibrant network of startup experts, serial entrepreneurs, and hidden champions that we got to know during our time at the Founders Foundation.',
       batch: 'Fall 2021'
     },
     {
       id: '6',
-      imageUrl: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
-      name: 'Ahmed Hassan',
-      title: 'CEO',
-      company: 'LogiChain',
-      quote: 'Startup School taught me the importance of customer discovery. By the end of the program, we had validated our solution with 50+ potential customers and secured our first pilot project.',
-      batch: 'Spring 2021'
+      imageUrl: '/images/founders/Torsten Image.jpg',
+      name: 'Torsten Bendlin',
+      title: 'Co-Founder & CEO',
+      company: 'Valuedesk',
+      quote: 'Bei der Startup School habe ich meine beiden Co-Founder Dennis und Ingo kennengelernt. Ohne die Founders Foundation wäre vieles für uns unmöglich gewesen. Ich kann die Startup School daher nur wärmstens empfehlen.',
+      batch: 'Spring 2017'
     }
   ]
 
@@ -83,6 +84,7 @@ export function FounderTestimonialsSection() {
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
+      setDirection('right')
       setCurrentIndex(prev => (prev + 1) % totalSlides)
     }, 6000) // Increased from 4000ms to 6000ms
 
@@ -91,6 +93,7 @@ export function FounderTestimonialsSection() {
 
   const goToPrevious = () => {
     setIsAutoPlaying(false)
+    setDirection('left')
     setCurrentIndex(prev => (prev - 1 + totalSlides) % totalSlides)
     // Resume auto-play after 10 seconds
     setTimeout(() => setIsAutoPlaying(true), 10000)
@@ -98,6 +101,7 @@ export function FounderTestimonialsSection() {
 
   const goToNext = () => {
     setIsAutoPlaying(false)
+    setDirection('right')
     setCurrentIndex(prev => (prev + 1) % totalSlides)
     // Resume auto-play after 10 seconds
     setTimeout(() => setIsAutoPlaying(true), 10000)
@@ -105,6 +109,7 @@ export function FounderTestimonialsSection() {
 
   const goToSlide = (index: number) => {
     setIsAutoPlaying(false)
+    setDirection(index > currentIndex ? 'right' : 'left')
     setCurrentIndex(index)
     // Resume auto-play after 10 seconds
     setTimeout(() => setIsAutoPlaying(true), 10000)
@@ -151,18 +156,31 @@ export function FounderTestimonialsSection() {
         </div>
       </div>
 
-      {/* Testimonial Display - SINGLE CARD */}
-      <div className="relative min-h-[300px] flex items-center justify-center">
-        <div className="w-full">
-          <FounderTestimonialCard
-            imageUrl={testimonials[currentIndex].imageUrl}
-            name={testimonials[currentIndex].name}
-            title={testimonials[currentIndex].title}
-            company={testimonials[currentIndex].company}
-            quote={testimonials[currentIndex].quote}
-            batch={testimonials[currentIndex].batch}
-          />
-        </div>
+      {/* Testimonial Display - SLIDING CARD */}
+      <div className="relative min-h-[300px] flex items-center justify-center overflow-hidden">
+        {testimonials.map((testimonial, idx) => {
+          // Only render current, previous, and next for performance
+          if (idx !== currentIndex && idx !== (currentIndex + 1) % totalSlides && idx !== (currentIndex - 1 + totalSlides) % totalSlides) return null
+          let position = 'translate-x-full opacity-0 pointer-events-none';
+          if (idx === currentIndex) position = 'translate-x-0 opacity-100 z-10';
+          else if (direction === 'right' && idx === (currentIndex - 1 + totalSlides) % totalSlides) position = '-translate-x-full opacity-0 pointer-events-none';
+          else if (direction === 'left' && idx === (currentIndex + 1) % totalSlides) position = 'translate-x-full opacity-0 pointer-events-none';
+          return (
+            <div
+              key={testimonial.id}
+              className={`absolute top-0 left-0 w-full h-full transition-all duration-700 ease-in-out ${position}`}
+            >
+              <FounderTestimonialCard
+                imageUrl={testimonial.imageUrl}
+                name={testimonial.name}
+                title={testimonial.title}
+                company={testimonial.company}
+                quote={testimonial.quote}
+                batch={testimonial.batch}
+              />
+            </div>
+          )
+        })}
       </div>
 
       {/* Carousel Indicators */}
