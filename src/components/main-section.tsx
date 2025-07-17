@@ -303,7 +303,6 @@ function AIVerticalsSections() {
 }
 
 function AccordionSection({ 
-  id, 
   title, 
   author, 
   isOpen, 
