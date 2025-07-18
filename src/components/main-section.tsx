@@ -166,6 +166,24 @@ export function MainSection() {
                   <span className="relative z-10">{t('main.alumniStories')}</span>
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neutral-100/20 to-neutral-200/20 dark:from-neutral-800/20 dark:to-neutral-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
+
+                {/* Event Calendar Button */}
+                <a
+                  href="https://foundersfoundation.de/event-kalender/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative px-4 md:px-5 py-2 md:py-2.5 text-xs md:text-sm font-medium text-black dark:text-white
+                                 bg-white/40 dark:bg-white/10 backdrop-blur-xl 
+                                 border border-white/50 dark:border-white/20
+                                 rounded-full shadow-lg
+                                 hover:bg-white/60 dark:hover:bg-white/20 
+                                 hover:border-white/70 dark:hover:border-white/30
+                                 hover:shadow-xl hover:scale-105
+                                 transition-all duration-300 ease-out
+                                 active:scale-95 w-full md:w-auto md:min-w-32 max-w-xs text-center">
+                  <span className="relative z-10">{language === 'de' ? 'Event Kalender' : 'Event Calendar'}</span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neutral-100/20 to-neutral-200/20 dark:from-neutral-800/20 dark:to-neutral-700/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
               </div>
             </div>
           </div>
@@ -254,7 +272,7 @@ export function MainSection() {
 
 function AIVerticalsSections() {
   const [openSections, setOpenSections] = useState<string[]>(['industrial'])
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   const toggleSection = (sectionId: string) => {
     setOpenSections(prev => 
@@ -263,6 +281,26 @@ function AIVerticalsSections() {
         : [...prev, sectionId]
     )
   }
+
+  // Define YouTube links per language
+  const videoLinks = {
+    de: {
+      industrial: '', // e.g. 'https://www.youtube.com/embed/GERMAN_LINK_1'
+      vertical: '',   // e.g. 'https://www.youtube.com/embed/GERMAN_LINK_2'
+      voice: '',      // e.g. 'https://www.youtube.com/embed/GERMAN_LINK_3'
+    },
+    en: {
+      industrial: '', // e.g. 'https://www.youtube.com/embed/ENGLISH_LINK_1'
+      vertical: '',   // e.g. 'https://www.youtube.com/embed/ENGLISH_LINK_2'
+      voice: '',      // e.g. 'https://www.youtube.com/embed/ENGLISH_LINK_3'
+    }
+  }
+
+  // Select links based on current language, fallback to 'en' if not found
+  const langKey = language === 'de' ? 'de' : 'en'
+  const industrialYoutube = videoLinks[langKey].industrial
+  const verticalYoutube = videoLinks[langKey].vertical
+  const voiceYoutube = videoLinks[langKey].voice
 
   return (
     <div className="space-y-2 sm:space-y-3">
@@ -274,7 +312,7 @@ function AIVerticalsSections() {
         isOpen={openSections.includes('industrial')}
         onToggle={() => toggleSection('industrial')}
       >
-        <IndustrialAIContent />
+        <IndustrialAIContent youtubeLink={industrialYoutube} />
       </AccordionSection>
 
       {/* Vertical AI Section */}
@@ -285,7 +323,7 @@ function AIVerticalsSections() {
         isOpen={openSections.includes('vertical')}
         onToggle={() => toggleSection('vertical')}
       >
-        <VerticalAIContent />
+        <VerticalAIContent youtubeLink={verticalYoutube} />
       </AccordionSection>
 
       {/* Voice AI Section */}
@@ -296,7 +334,7 @@ function AIVerticalsSections() {
         isOpen={openSections.includes('voice')}
         onToggle={() => toggleSection('voice')}
       >
-        <VoiceAIContent />
+        <VoiceAIContent youtubeLink={voiceYoutube} />
       </AccordionSection>
     </div>
   )
@@ -375,7 +413,7 @@ function AccordionSection({
   )
 }
 
-function IndustrialAIContent() {
+function IndustrialAIContent({ youtubeLink }: { youtubeLink?: string }) {
   const { t } = useLanguage()
   
   return (
@@ -392,27 +430,29 @@ function IndustrialAIContent() {
             </p>
           </div>
         </div>
-        {/* Video Section */}
-        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
-          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+        {/* Video Section (only if valid link) */}
+        {youtubeLink && youtubeLink.trim() !== '' && (
+          <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+            <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+              <iframe
+                width="100%"
+                height="100%"
+                src={youtubeLink}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )
 }
 
-function VerticalAIContent() {
+function VerticalAIContent({ youtubeLink }: { youtubeLink?: string }) {
   const { t } = useLanguage()
   
   return (
@@ -429,27 +469,29 @@ function VerticalAIContent() {
             </p>
           </div>
         </div>
-        {/* Video Section */}
-        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
-          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+        {/* Video Section (only if valid link) */}
+        {youtubeLink && youtubeLink.trim() !== '' && (
+          <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+            <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+              <iframe
+                width="100%"
+                height="100%"
+                src={youtubeLink}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )
 }
 
-function VoiceAIContent() {
+function VoiceAIContent({ youtubeLink }: { youtubeLink?: string }) {
   const { t } = useLanguage()
   
   return (
@@ -466,21 +508,23 @@ function VoiceAIContent() {
             </p>
           </div>
         </div>
-        {/* Video Section */}
-        <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
-          <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+        {/* Video Section (only if valid link) */}
+        {youtubeLink && youtubeLink.trim() !== '' && (
+          <div className="flex items-center justify-center w-full md:w-auto md:flex-[0_0_auto]">
+            <div className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 aspect-[9/16] rounded-2xl shadow-xl overflow-hidden bg-black flex items-center justify-center">
+              <iframe
+                width="100%"
+                height="100%"
+                src={youtubeLink}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )

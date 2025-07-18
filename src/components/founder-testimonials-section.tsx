@@ -28,7 +28,7 @@ export function FounderTestimonialsSection() {
       title: 'Co-Founder & CEO',
       company: 'saasmetrix',
       quote: 'Wenn Du Teil eines lebendigen Startup-Netzwerks werden willst, auf der Suche nach Startupwissen und Unterstützung für Deine Gründerreise bist, ist die Founders Foundation der perfekte Ort dafür.',
-      batch: 'Fall 2023'
+      batch: 'School to Accelerator #9'
     },
     {
       id: '2',
@@ -46,7 +46,7 @@ export function FounderTestimonialsSection() {
       title: 'Co-Founder & COO',
       company: 'Synctive',
       quote: 'Mit einem kleinen Gründerteam unserer B2B-Geschäftsidee sind wir in das Founders Lab eingezogen. Dort haben wir mit Experten aus der Industrie ein valides Geschäftsmodell entwickelt, das ein echtes Problem am Markt löst.',
-      batch: 'Founders Lab'
+      batch: 'Accelerator #8'
     },
     {
       id: '4',
@@ -55,7 +55,7 @@ export function FounderTestimonialsSection() {
       title: 'Co-Founder & CEO',
       company: 'VisionAI',
       quote: 'Der Founders Accelerator war für uns der ideale Ort, um einen schnellen Markteintritt zu schaffen und auch der Zugang zu unseren ersten Angelinvestoren hat uns geholfen, extrem viele Fehler zu vermeiden.',
-      batch: 'Accelerator #10'
+      batch: 'Accelerator #7'
     },
     {
       id: '5',
@@ -64,7 +64,7 @@ export function FounderTestimonialsSection() {
       title: 'Co-Founder & CEO',
       company: 'margin',
       quote: 'We are part of a vibrant network of startup experts, serial entrepreneurs, and hidden champions that we got to know during our time at the Founders Foundation.',
-      batch: 'Fall 2021'
+      batch: 'Accelerator #1'
     },
     {
       id: '6',
@@ -73,7 +73,7 @@ export function FounderTestimonialsSection() {
       title: 'Co-Founder & CEO',
       company: 'Valuedesk',
       quote: 'Bei der Startup School habe ich meine beiden Co-Founder Dennis und Ingo kennengelernt. Ohne die Founders Foundation wäre vieles für uns unmöglich gewesen. Ich kann die Startup School daher nur wärmstens empfehlen.',
-      batch: 'Spring 2017'
+      batch: 'School to Accelerator #2'
     }
   ]
 

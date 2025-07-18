@@ -64,7 +64,7 @@ export function AlumniStoriesPage() {
       name: 'saasmetrix',
       logoLight: '/images/alumni/saasmetrix.svg',
       logoDark: '/images/alumni/saasmetrix.svg',
-      school: 'Spring 2022',
+      school: 'School to Accelerator #9',
       description: 'SaaS license spend optimization platform',
       website: 'https://www.saasmetrix.io/de/',
       exited: true
@@ -74,7 +74,7 @@ export function AlumniStoriesPage() {
       name: 'VisionAI',
       logoLight: '/images/alumni/VisionAI Logo Black.svg',
       logoDark: '/images/alumni/VisionAI-Logo.svg',
-      school: 'Fall 2021',
+      school: 'Accelerator #7',
       description: 'Agentic commerce platform',
       website: 'https://www.visionai.co/'
     },
@@ -83,7 +83,7 @@ export function AlumniStoriesPage() {
       name: 'acto',
       logoLight: '/images/alumni/acto logo.svg',
       logoDark: '/images/alumni/acto logo.svg',
-      school: 'Spring 2021',
+      school: 'Founders Lab',
       description: 'AI sales decision intelligence',
       website: 'https://www.heyacto.com/'
     },
@@ -92,7 +92,7 @@ export function AlumniStoriesPage() {
       name: 'assemblean',
       logoLight: '/images/alumni/assemblean_no_bg.png',
       logoDark: '/images/alumni/assemblean_no_bg.png',
-      school: 'Accelerator #12',
+      school: 'Accelerator 2025',
       description: 'AI-powered on-demand manufacturing and assembly',
       website: 'https://assemblean.com/'
     },
@@ -101,7 +101,7 @@ export function AlumniStoriesPage() {
       name: 'Catego',
       logoLight: '/images/alumni/Catego.png',
       logoDark: '/images/alumni/Catego.png',
-      school: 'Accelerator #12',
+      school: 'School to Accelerator 2025',
       description: 'SME Category intelligence platform',
       website: 'https://www.catego.org/'
     },
@@ -110,7 +110,7 @@ export function AlumniStoriesPage() {
       name: 'Credular',
       logoLight: '/images/alumni/Credular.png',
       logoDark: '/images/alumni/Credular.png',
-      school: 'Accelerator #12',
+      school: 'Accelerator 2025',
       description: 'Co-pilot for service and manufacturing',
       website: 'https://www.credular.de/'
     },
@@ -119,25 +119,25 @@ export function AlumniStoriesPage() {
       name: 'DeepDetectAI',
       logoLight: '/images/alumni/DeepDetectAI_no_bg.png',
       logoDark: '/images/alumni/DeepDetectAI_no_bg.png',
-      school: 'Spring 2024',
+      school: 'School to Accelerator 2025',
       description: 'AI Enterprise deepfake protection',
       website: 'https://deepdetectai.de/'
     },
     {
       id: '14',
-      name: 'easimo',
-      logoLight: '/images/alumni/easimo-logo.svg',
-      logoDark: '/images/alumni/easimo-logo.svg',
-      school: 'TBD',
-      description: 'All-in-one solution for real estate management',
-      website: 'https://easimo.de/'
+      name: 'Valuedesk',
+      logoLight: '/images/alumni/valuedesk-logo.png',
+      logoDark: '/images/alumni/valuedesk-logo.png',
+      school: 'School to Accelerator #2',
+      description: 'Enterprise value management and performance solution',
+      website: 'https://www.valuedesk.de/'
     },
     {
       id: '12',
       name: 'Evermood',
       logoLight: '/images/alumni/Evermood.svg',
       logoDark: '/images/alumni/Evermood.svg',
-      school: 'TBD',
+      school: 'Accelerator #5',
       description: 'Holistic employee health platform',
       website: 'https://www.evermood.com/de',
       exited: true
@@ -147,7 +147,7 @@ export function AlumniStoriesPage() {
       name: 'Finokapi',
       logoLight: '/images/alumni/Finokapi Logo.png',
       logoDark: '/images/alumni/Finokapi Logo.png',
-      school: 'Autumn 2024',
+      school: 'School to Accelerator 2025',
       description: 'AI-native financial controlling for SMEs',
       website: 'https://finokapi.com/'
     },
@@ -165,7 +165,7 @@ export function AlumniStoriesPage() {
       name: 'margin',
       logoLight: '/images/alumni/margin_standard.svg',
       logoDark: '/images/alumni/margin_standard.svg',
-      school: 'TBD',
+      school: 'Accelerator #1',
       description: 'Token market making and liquidity provider',
       website: 'https://margin.io/'
     },
@@ -183,7 +183,7 @@ export function AlumniStoriesPage() {
       name: 'Phaina',
       logoLight: '/images/alumni/PHAINA_schwarz.svg',
       logoDark: '/images/alumni/PHAINA_schwarz.svg',
-      school: 'TBD',
+      school: 'Accelerator #9',
       description: 'Guided selling for B2B commerce',
       website: 'https://phaina.com/'
     },
@@ -192,7 +192,7 @@ export function AlumniStoriesPage() {
       name: 'Puraite',
       logoLight: '/images/alumni/Puraite-Logo.png',
       logoDark: '/images/alumni/Puraite-Logo.png',
-      school: 'Autumn 2023',
+      school: 'School to Accelerator 2025',
       description: 'AI-powered real time medical evidence',
       website: 'https://puraite.com/'
     },
@@ -201,9 +201,46 @@ export function AlumniStoriesPage() {
       name: 'semalytix',
       logoLight: '/images/alumni/semalytix_grey.svg',
       logoDark: '/images/alumni/semalytix_grey.svg',
-      school: 'TBD',
+      school: 'Accelerator #2',
       description: 'AI patient and physician experience insights',
       website: 'https://semalytix.com/'
+    },
+    {
+      id: '21',
+      name: 'synctive',
+      logoLight: '/images/alumni/synctive-logo.svg',
+      logoDark: '/images/alumni/synctive-logo.svg',
+      school: 'Accelerator #8',
+      description: 'IoT-enabled proactive machinery after-sales',
+      website: 'https://synctive.io/'
+    },
+    {
+      id: '22',
+      name: 'easimo',
+      logoLight: '/images/alumni/easimo-logo.svg',
+      logoDark: '/images/alumni/easimo-logo.svg',
+      school: 'Accelerator #7',
+      description: 'All-in-one solution for real estate management',
+      website: 'https://easimo.de/'
+    },
+    {
+      id: '23',
+      name: 'widgetbook',
+      logoLight: '/images/alumni/widgetbook-logo.png',
+      logoDark: '/images/alumni/widgetbook-logo.png',
+      school: 'Accelerator #9',
+      description: 'Open-source Flutter widget builder',
+      website: 'https://www.widgetbook.io/'
+    },
+    {
+      id: '24',
+      name: 'ladeplan',
+      logoLight: '/images/alumni/ladeplan-logo.png',
+      logoDark: '/images/alumni/ladeplan-logo.png',
+      school: 'Accelerator #11',
+      description: 'AI-power planning of electric charging stations',
+      website: 'https://ladeplan.com/',
+      exited: true
     }
   ]
 
